@@ -1,6 +1,12 @@
-import http from 'http';
-import config from '../config/index.js'
+import express from 'express';
 
-const server = http.createServer();
 
-server.listen(config.server.port);
+const api = express();
+
+api.get('/status',(req, res) =>{
+    res.json({
+        msg:'API en linea y funcionando'
+    })
+} )
+
+export default api;
